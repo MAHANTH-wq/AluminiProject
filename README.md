@@ -4,7 +4,7 @@ Django web development
 Running the Project Locally
 First, clone the repository to your local machine:
 ```
-git clone https://github.com/sibtc/django-multiple-user-types-example.git
+git clone https://github.com/MAHANTH-wq/AluminiProject.git
 ```
 Install the requirements:
 ```
