@@ -1,0 +1,27 @@
+{% extends 'Users/home.html' %}
+
+{% block content %}
+ <p>Topic: {{ topic }}</p>
+<p>Entries:</p>
+{% if user.is_college %}
+  <p>
+    <a href="{% url 'Users:new_entry' topic.id %}">Add new entry</a>
+  </p>
+{% endif %}
+<ul>
+  {% for entry in entries %}
+<li>
+  <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+  <p>{{ entry.text|linebreaks }}</p>
+  {% if user.is_college %}
+    <p><a href="{% url 'Users:edit_entry' entry.id %}">edit entry</a>
+      <a href="{% url 'Users:delete_entry' entry.id %}">delete entry</a></p>
+  {% endif %}
+</li>
+  {% empty %}
+<li>
+There are no entries for this topic yet.
+</li>
+{% endfor %}
+</ul>
+{% endblock content %}

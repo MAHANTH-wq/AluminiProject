@@ -1,0 +1,6 @@
+{% extends "Users/home.html" %}
+{% block content %}
+<div id="map">
+    <embed type="image/svg+xml" src={{ chart|safe }}/>
+ </div>
+{% endblock content %}

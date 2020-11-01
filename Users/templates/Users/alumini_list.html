@@ -1,0 +1,26 @@
+
+{% extends 'Users/home.html' %}
+{% block content %}
+<p>Alumini_list</p>
+<h3>List of Alumini to approved</h3>
+  <ul>
+  {% for alumini_unapproved in aluminis_unapproved %}
+  <li>
+     <p> {{ alumini_unapproved }} {{ alumini_unapproved.user.is_active }} </p>
+     <p><a href="{% url 'Users:approve' alumini_unapproved.user.id %}">approve</a></p>
+  </li>
+  {% empty %}
+<li>No aluminis are to be approved yet.</li>
+  {% endfor %}
+  </ul>
+  <h3>List of alumini belonging to college </h3>
+  <ul>
+    {% for alumini_approved in aluminis_approved %}
+    <li>
+       <p> {{ alumini_approved }} {{ alumini_approved.user.is_active }} </p>
+    </li>
+    {% empty %}
+  <li>No aluminis in the list.</li>
+    {% endfor %}
+    </ul>
+    {% endblock content %}
