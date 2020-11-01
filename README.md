@@ -8,7 +8,10 @@ git clone https://github.com/sibtc/django-multiple-user-types-example.git
 ```
 Install the requirements:
 ```
-pip install -r requirements.txt
+pip install Django
+```
+```
+pip install pygal
 ```
 Create the database:
 ```
