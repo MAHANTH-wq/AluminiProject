@@ -255,11 +255,22 @@ def income_graph(request):
     income_graph.add('',values)
     return income_graph.render_django_response()
 
-
-
-
-
-
+def update_alumini(request):
+    if request.user.is_alumini:
+        alumini=Alumini.objects.get(user=request.user)
+        if request.method != 'POST':
+            form=AluminiSignUpForm(instance=alumini)
+        else:
+            form=AluminiSignUpForm(instance=alumini,data=request.POST)
+            if form.is_valid():
+                form.save()
+                return HttpResponseRedirect(reverse('Users:index'))
+            else:
+                raise Http404
+        context={'form':form}
+        return render(request,'Users/update_alumini.html',context)
+    else:
+        raise Http404
 
     
 

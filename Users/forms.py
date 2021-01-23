@@ -29,7 +29,10 @@ class AluminiSignUpForm(UserCreationForm):
     def save(self):
         user = super().save(commit=False)
         user.is_alumini= True
-        user.is_active=False
+        if user.is_active==True:
+            user.is_active=True
+        else:
+            user.is_active=False
         user.save()
         alumini = Alumini(user=user,college=self.cleaned_data['colleges'],location=self.cleaned_data['locations'],
         salary=self.cleaned_data['salary'])

@@ -13,6 +13,7 @@
       Hello, {{ user.username }}
       <a href="{% url 'Users:topics' %}">Topics</a>
       <a href="{% url 'Users:logout' %}">log out</a>
+      <a href="{% url 'Users:update_alumini' %}">update alumini</a>
     {% else %}
       <a href="{% url 'Users:login' %}">Log in</a>>
       <a href="{% url 'Users:alumini_register' %}">Alumini Register</a>

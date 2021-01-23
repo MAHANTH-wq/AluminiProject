@@ -22,4 +22,5 @@ urlpatterns=[
     url(r'^delete_entry/(?P<entry_id>\d+)/$', classroom.delete_entry,name='delete_entry'),
     url(r'^world_map/$',classroom.worldmap,name='world_map'),
     url(r'^income_graph/$',classroom.income_graph,name='income_graph'),
+    url(r'^update_alumini/$', classroom.update_alumini,name='update_alumini'),
 ]
