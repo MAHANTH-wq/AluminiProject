@@ -1,22 +1,28 @@
 {% extends "Users/home.html" %}
+{% block header %}
+<h1>Topics</h1>
+{% endblock header %}
 
 {% block content %}
-<p>Topics</p>
+
   <ul>
   {% for topic in topics %}
   <li>
-     <p><a href="{% url 'Users:topic' topic.id %}">{{ topic }}</a>
-      <a href="{% url 'Users:delete_topic' topic.id %}">delete {{ topic }}</a></p>
+     <h3><a href="{% url 'Users:topic' topic.id %}">{{ topic }}</a><h3>
+      <a href="{% url 'Users:delete_topic' topic.id %}">delete {{ topic }}</a>
   </li>
   {% empty %}
 <li>No topics have been added yet.</li>
   {% endfor %}
   </ul>
   {% if user.is_college %}
-    <a href="{% url 'Users:new_topic' %}" >Add a new topic</a>
-    <a href="{% url 'Users:alumini_list' %}">Alumini list</a>
-    <a href="{% url 'Users:world_map' %}">World_map</a>
-    <a href="{% url 'Users:income_graph' %}">income_graph</a>
+    <h3><a href="{% url 'Users:new_topic' %}" >Add a new topic</a></h3>
+
+    <h3><a href="{% url 'Users:alumini_list' %}">Alumini list</a></h3>
+
+    <h3><a href="{% url 'Users:world_map' %}">World_map</a></h3>
+
+    <h3><a href="{% url 'Users:income_graph' %}">income_graph</a></h3>
     <p>
       {{ cht_aluminis.generate|safe }}
     </p>

@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #my apps
+
     'Users',
+    #third party apps
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +125,8 @@ AUTH_USER_MODEL='Users.User'
 
 STATIC_URL = '/static/'
 LOGIN_URL = reverse_lazy('login')
+
+# settings for django-bootstrap3
+BOOTSTRAP3 ={
+    'include_jquery' : True,
+}

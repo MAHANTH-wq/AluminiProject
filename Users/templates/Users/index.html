@@ -7,10 +7,15 @@
           </title>
       </head>
       <body>
+        {% block header %}
+        <div class='jumbotron'>
+          <h1>A connection between college and alumini </h1>
+        </div>
+        {% endblock header %}
         {% block content %}
-    <p>
+    <h2>
       This is a college website for alumini
-    </p>
+    </h2>
     {% endblock content %}
     </body>  
   </html>
